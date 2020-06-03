@@ -1,0 +1,13 @@
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://texture/plant/bamboo.tga" type="Texture" id=1]
+[ext_resource path="res://texture/plant/bamboo_normal.tga" type="Texture" id=2]
+
+[resource]
+flags_transparent = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 1 )
+roughness = 0.35
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )

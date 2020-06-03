@@ -1,0 +1,17 @@
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://texture/concrete_cube/concrete_cube_normal.tga" type="Texture" id=1]
+[ext_resource path="res://texture/concrete_cube/concrete_cube_diffuse.tga" type="Texture" id=2]
+
+[resource]
+resource_name = "Barriers.003"
+albedo_color = Color( 0.639216, 0.639216, 0.639216, 1 )
+albedo_texture = ExtResource( 2 )
+metallic = 0.2
+metallic_specular = 0.4
+metallic_texture_channel = 4
+roughness = 0.9
+roughness_texture_channel = 4
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 1 )

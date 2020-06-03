@@ -1,0 +1,22 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 23
+load_path = "res://.import/cardboard_box_diffuse.tga-f3147e338daa7770dc4d95a59816c414.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/building_specular.tga-cf4926e4f65670c349b90710184ec4f6.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/cardboard_box_normal.tga-faeec0d756e87f9b827a498f8d133c92.s3tc.stex"
+
+[resource]
+params_cull_mode = 2
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 2 )
+roughness = 0.83
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 3 )

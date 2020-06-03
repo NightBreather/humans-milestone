@@ -1,0 +1,20 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[ext_resource path="res://texture/trash/trash_can_5_diffuse.tga" type="Texture" id=1]
+[ext_resource path="res://texture/trash/trash_can_5_specular.tga" type="Texture" id=2]
+[ext_resource path="res://texture/trash/trash_can_5_normal.tga" type="Texture" id=3]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/default_roughness.png-9c85d8ec0c6858deca45ea4506cd5921.s3tc.stex"
+
+[resource]
+albedo_texture = ExtResource( 1 )
+metallic = 0.7
+metallic_specular = 0.9
+metallic_texture = ExtResource( 2 )
+roughness = 0.6
+roughness_texture = SubResource( 1 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 3 )

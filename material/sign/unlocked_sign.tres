@@ -1,0 +1,9 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/unlocked_sign.png-4a81681453751b9acc0da7ac393f1b71.s3tc.stex"
+
+[resource]
+flags_unshaded = true
+albedo_texture = SubResource( 1 )

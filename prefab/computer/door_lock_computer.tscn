@@ -1,0 +1,182 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://gui/theme/computer_system_theme.tres" type="Theme" id=1]
+[ext_resource path="res://material/metal/dark_metal.tres" type="Material" id=2]
+[ext_resource path="res://source/computer/core/ComputerTouchScreen.cs" type="Script" id=3]
+[ext_resource path="res://source/computer/door/DoorLockSystemGUI.cs" type="Script" id=4]
+[ext_resource path="res://source/computer/door/DoorLockComputerInitializer.cs" type="Script" id=5]
+[ext_resource path="res://source/computer/door/DoorLockComputer.cs" type="Script" id=6]
+[ext_resource path="res://.import/ocarina_system_button_pressed.wav-cdad8038763e682fb069a6c2a59dc410.sample" type="AudioStream" id=7]
+
+[sub_resource type="ArrayMesh" id=2]
+surfaces/0 = {
+"aabb": AABB( -0.1085, -0.053, -0.01, 0.217, 0.106, 0.02001 ),
+"array_data": PoolByteArray( 63, 53, 222, 189, 135, 22, 89, 189, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 0, 60, 0, 0, 163, 62, 201, 189, 166, 155, 68, 189, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 159, 59, 15, 42, 63, 53, 222, 61, 135, 22, 89, 189, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 0, 0, 0, 0, 163, 62, 201, 61, 166, 155, 68, 61, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 9, 42, 159, 59, 63, 53, 222, 61, 135, 22, 89, 61, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 0, 0, 0, 60, 207, 247, 211, 61, 166, 155, 68, 61, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 230, 37, 159, 59, 207, 247, 83, 61, 166, 155, 68, 189, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 47, 52, 15, 42, 207, 247, 211, 61, 166, 155, 196, 188, 10, 215, 35, 60, 0, 0, 127, 0, 130, 254, 0, 127, 230, 37, 98, 52, 207, 247, 211, 61, 166, 155, 68, 189, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 230, 37, 15, 42, 63, 53, 222, 189, 135, 22, 89, 61, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 0, 60, 0, 60, 207, 247, 211, 189, 166, 155, 68, 189, 10, 215, 35, 60, 0, 0, 127, 0, 130, 0, 0, 127, 207, 59, 15, 42, 207, 247, 83, 189, 166, 155, 68, 61, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 231, 57, 159, 59, 207, 247, 211, 189, 166, 155, 196, 60, 10, 215, 35, 60, 0, 0, 127, 0, 130, 1, 0, 127, 207, 59, 207, 57, 207, 247, 211, 189, 166, 155, 68, 61, 10, 215, 35, 60, 0, 0, 127, 0, 129, 0, 0, 127, 207, 59, 159, 59, 207, 247, 211, 61, 166, 155, 68, 61, 10, 215, 163, 59, 129, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 0, 207, 247, 211, 61, 166, 155, 68, 61, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 52, 207, 247, 211, 61, 166, 155, 196, 188, 10, 215, 35, 60, 129, 0, 0, 0, 0, 130, 0, 129, 0, 58, 0, 52, 207, 247, 211, 61, 166, 155, 68, 189, 10, 215, 163, 59, 129, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 0, 207, 247, 211, 61, 166, 155, 68, 189, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 52, 207, 247, 211, 189, 166, 155, 68, 61, 10, 215, 163, 59, 0, 129, 0, 0, 0, 0, 129, 129, 0, 60, 0, 0, 207, 247, 211, 189, 166, 155, 68, 61, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 129, 0, 58, 0, 0, 207, 247, 83, 189, 166, 155, 68, 61, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 129, 0, 58, 0, 52, 207, 247, 211, 61, 166, 155, 68, 61, 10, 215, 163, 59, 0, 129, 0, 0, 0, 0, 129, 129, 0, 60, 0, 60, 163, 62, 201, 61, 166, 155, 68, 61, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 129, 255, 57, 204, 59, 207, 247, 211, 61, 166, 155, 68, 61, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 129, 0, 58, 0, 60, 207, 247, 211, 189, 166, 155, 68, 61, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 58, 207, 247, 211, 189, 166, 155, 68, 61, 10, 215, 163, 59, 127, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 60, 207, 247, 211, 189, 166, 155, 196, 60, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 129, 0, 52, 0, 58, 207, 247, 211, 189, 166, 155, 68, 189, 10, 215, 163, 59, 127, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 60, 207, 247, 211, 189, 166, 155, 68, 189, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 129, 0, 60, 0, 58, 207, 247, 211, 189, 166, 155, 196, 60, 10, 215, 35, 60, 127, 0, 0, 0, 0, 130, 0, 129, 255, 51, 0, 58, 207, 247, 211, 189, 166, 155, 68, 61, 10, 215, 163, 59, 127, 0, 0, 0, 0, 129, 0, 129, 0, 0, 0, 60, 207, 247, 211, 61, 166, 155, 68, 189, 10, 215, 163, 59, 0, 127, 0, 0, 0, 0, 129, 129, 0, 60, 0, 0, 207, 247, 211, 61, 166, 155, 68, 189, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 129, 0, 58, 0, 0, 207, 247, 83, 61, 166, 155, 68, 189, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 129, 0, 58, 0, 52, 207, 247, 211, 189, 166, 155, 68, 189, 10, 215, 163, 59, 0, 127, 0, 0, 0, 0, 129, 129, 0, 60, 0, 60, 163, 62, 201, 189, 166, 155, 68, 189, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 129, 255, 57, 204, 59, 207, 247, 211, 189, 166, 155, 68, 189, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 129, 0, 58, 0, 60, 63, 53, 222, 61, 135, 22, 89, 61, 10, 215, 35, 188, 127, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 0, 63, 53, 222, 61, 135, 22, 89, 189, 10, 215, 35, 188, 127, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 0, 63, 53, 222, 61, 135, 22, 89, 61, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 60, 63, 53, 222, 61, 135, 22, 89, 189, 10, 215, 35, 60, 127, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 60, 63, 53, 222, 189, 135, 22, 89, 61, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 129, 127, 0, 0, 0, 0, 63, 53, 222, 189, 135, 22, 89, 61, 10, 215, 35, 188, 0, 127, 0, 0, 0, 0, 130, 127, 0, 60, 0, 0, 63, 53, 222, 61, 135, 22, 89, 61, 10, 215, 35, 60, 0, 127, 0, 0, 0, 0, 130, 127, 0, 0, 0, 60, 63, 53, 222, 61, 135, 22, 89, 61, 10, 215, 35, 188, 0, 127, 0, 0, 0, 0, 129, 127, 0, 60, 0, 60, 63, 53, 222, 189, 135, 22, 89, 61, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 0, 63, 53, 222, 189, 135, 22, 89, 189, 10, 215, 35, 60, 129, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 0, 63, 53, 222, 189, 135, 22, 89, 61, 10, 215, 35, 188, 129, 0, 0, 0, 0, 129, 0, 127, 0, 0, 0, 60, 63, 53, 222, 189, 135, 22, 89, 189, 10, 215, 35, 188, 129, 0, 0, 0, 0, 129, 0, 127, 0, 60, 0, 60, 63, 53, 222, 61, 135, 22, 89, 189, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 129, 127, 0, 0, 0, 0, 63, 53, 222, 61, 135, 22, 89, 189, 10, 215, 35, 188, 0, 129, 0, 0, 0, 0, 130, 127, 0, 60, 0, 0, 63, 53, 222, 189, 135, 22, 89, 189, 10, 215, 35, 60, 0, 129, 0, 0, 0, 0, 130, 127, 0, 0, 0, 60, 63, 53, 222, 189, 135, 22, 89, 189, 10, 215, 35, 188, 0, 129, 0, 0, 0, 0, 129, 127, 0, 60, 0, 60, 63, 53, 222, 61, 135, 22, 89, 61, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 0, 0, 0, 63, 53, 222, 189, 135, 22, 89, 61, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 0, 63, 53, 222, 61, 135, 22, 89, 189, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 0, 0, 60, 63, 53, 222, 189, 135, 22, 89, 189, 10, 215, 35, 188, 0, 0, 129, 0, 129, 0, 0, 127, 0, 60, 0, 60, 207, 247, 211, 189, 166, 155, 68, 61, 10, 215, 163, 59, 0, 0, 127, 0, 130, 0, 0, 129, 0, 60, 0, 0, 207, 247, 211, 61, 166, 155, 68, 61, 10, 215, 163, 59, 0, 0, 127, 0, 129, 0, 0, 129, 0, 0, 0, 0, 207, 247, 211, 61, 166, 155, 68, 189, 10, 215, 163, 59, 0, 0, 127, 0, 130, 0, 0, 129, 0, 0, 0, 60, 207, 247, 211, 189, 166, 155, 68, 189, 10, 215, 163, 59, 0, 0, 127, 0, 129, 0, 0, 129, 0, 60, 0, 60 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0, 1, 0, 6, 0, 2, 0, 5, 0, 4, 0, 7, 0, 6, 0, 8, 0, 2, 0, 7, 0, 4, 0, 8, 0, 2, 0, 8, 0, 4, 0, 4, 0, 3, 0, 9, 0, 1, 0, 0, 0, 10, 0, 3, 0, 11, 0, 9, 0, 10, 0, 0, 0, 12, 0, 11, 0, 13, 0, 9, 0, 12, 0, 0, 0, 13, 0, 9, 0, 13, 0, 0, 0, 14, 0, 15, 0, 16, 0, 16, 0, 17, 0, 14, 0, 18, 0, 17, 0, 16, 0, 19, 0, 20, 0, 21, 0, 22, 0, 19, 0, 21, 0, 23, 0, 24, 0, 22, 0, 22, 0, 21, 0, 23, 0, 25, 0, 26, 0, 27, 0, 28, 0, 29, 0, 30, 0, 30, 0, 31, 0, 28, 0, 32, 0, 33, 0, 34, 0, 35, 0, 32, 0, 34, 0, 36, 0, 37, 0, 35, 0, 35, 0, 34, 0, 36, 0, 38, 0, 39, 0, 40, 0, 41, 0, 40, 0, 39, 0, 42, 0, 43, 0, 44, 0, 45, 0, 44, 0, 43, 0, 46, 0, 47, 0, 48, 0, 49, 0, 48, 0, 47, 0, 50, 0, 51, 0, 52, 0, 53, 0, 52, 0, 51, 0, 54, 0, 55, 0, 56, 0, 57, 0, 56, 0, 55, 0, 58, 0, 59, 0, 60, 0, 60, 0, 61, 0, 58, 0 ),
+"blend_shape_data": [  ],
+"format": 97559,
+"index_count": 120,
+"material": ExtResource( 2 ),
+"name": "metal",
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 62
+}
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.109, 0.053, 0.01 )
+
+[sub_resource type="PlaneMesh" id=3]
+size = Vector2( 0.207, 0.096 )
+
+[sub_resource type="ViewportTexture" id=4]
+viewport_path = NodePath("ScreenSurface/Viewport")
+
+[sub_resource type="SpatialMaterial" id=5]
+resource_local_to_scene = true
+flags_unshaded = true
+albedo_color = Color( 0.392157, 0.54902, 0.705882, 1 )
+albedo_texture = SubResource( 4 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 0.09, 0.033, 0.003 )
+
+[sub_resource type="SphereShape" id=7]
+radius = 20.0
+
+[sub_resource type="Animation" id=8]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("NoiseArea:monitorable")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 7 )
+} ],
+"times": PoolRealArray( 0 )
+}
+
+[node name="DoorLockComputer" type="Spatial"]
+script = ExtResource( 6 )
+doorLockSystemGUINP = NodePath("Source/DoorLockSystemGUI")
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="StaticBody"]
+use_in_baked_light = true
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 1 )
+
+[node name="BodyArea" type="Area" parent="."]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape" type="CollisionShape" parent="BodyArea"]
+shape = SubResource( 1 )
+
+[node name="ScreenSurface" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.009 )
+
+[node name="MeshInstance" type="MeshInstance" parent="ScreenSurface"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="Viewport" type="Viewport" parent="ScreenSurface"]
+size = Vector2( 145, 67 )
+disable_3d = true
+usage = 0
+render_target_v_flip = true
+render_target_update_mode = 3
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Panel" type="Panel" parent="ScreenSurface/Viewport"]
+margin_right = 145.0
+margin_bottom = 67.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ScreenSurface/Viewport/Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 135.0
+margin_bottom = 57.0
+text = "Lock"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TouchArea" type="Spatial" parent="ScreenSurface"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.003 )
+
+[node name="LockArea" type="Area" parent="ScreenSurface/TouchArea"]
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape" type="CollisionShape" parent="ScreenSurface/TouchArea/LockArea"]
+shape = SubResource( 6 )
+
+[node name="TouchTimer" type="Timer" parent="ScreenSurface/TouchArea"]
+wait_time = 0.1
+one_shot = true
+
+[node name="NoiseArea" type="Area" parent="." groups=[
+"noise",
+]]
+monitoring = false
+monitorable = false
+collision_layer = 65536
+collision_mask = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="NoiseArea"]
+shape = SubResource( 7 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/button_touch = SubResource( 8 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="ComputerTouchScreen" type="Node" parent="Source"]
+script = ExtResource( 3 )
+screenViewportNP = NodePath("../../ScreenSurface/Viewport")
+touchTimerNP = NodePath("../../ScreenSurface/TouchArea/TouchTimer")
+
+[node name="DoorLockSystemGUI" type="Node" parent="Source"]
+script = ExtResource( 4 )
+lockButtonNP = NodePath("../../ScreenSurface/Viewport/Panel/Button")
+lockAreaNP = NodePath("../../ScreenSurface/TouchArea/LockArea")
+
+[node name="DoorLockComputerInitializer" type="Node" parent="Source"]
+script = ExtResource( 5 )
+doorLockComputerNP = NodePath("../..")
+computerTouchScreenNP = NodePath("../ComputerTouchScreen")
+lockAreaNP = NodePath("../../ScreenSurface/TouchArea/LockArea")
+animationPlayerNP = NodePath("../../AnimationPlayer")
+[connection signal="pressed" from="ScreenSurface/Viewport/Panel/Button" to="Source/DoorLockSystemGUI" method="OnButtonPressed"]
+[connection signal="timeout" from="ScreenSurface/TouchArea/TouchTimer" to="Source/ComputerTouchScreen" method="OnReleaseTouch"]

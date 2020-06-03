@@ -1,0 +1,28 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/barrel_radioactive.png-8cb2caa75217685f1fa9d31a21f45699.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/barrel_radioactive_specular.png-c2fa6406dd1f8ce04c197c4877dabf31.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/barrel_radioactive_normal.png-a2abd9e89046f0c3fe0084d1e79ab539.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/barrel_radioactive_roughness.png-bb6b59e33a950e79ae7897962734914d.s3tc.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+metallic = 0.8
+metallic_specular = 0.65
+metallic_texture = SubResource( 2 )
+roughness = 0.7
+roughness_texture = SubResource( 4 )
+normal_enabled = true
+normal_scale = 2.5
+normal_texture = SubResource( 3 )

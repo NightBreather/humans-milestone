@@ -1,0 +1,9 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/puzzle_room_1_sign.png-55e0115dba68d57599281e21254cc6fc.s3tc.stex"
+
+[resource]
+flags_unshaded = true
+albedo_texture = SubResource( 1 )

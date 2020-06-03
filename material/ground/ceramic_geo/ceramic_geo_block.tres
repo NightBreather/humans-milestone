@@ -1,0 +1,26 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/ceramic_geo_pattern.png-31e2ca81a59fcfea95f25d5ead610623.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/ceramic_geo_pattern_specular.png-3cfb3b3c28d98e061ed16e7a176c5e0f.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/ceramic_geo_pattern_normal.png-9d0f6db3bf1779d83f73908c595554b1.s3tc.stex"
+
+[resource]
+resource_name = "Modular buildings"
+albedo_color = Color( 0.64, 0.64, 0.64, 1 )
+albedo_texture = SubResource( 1 )
+metallic = 0.5
+metallic_texture = SubResource( 2 )
+metallic_texture_channel = 4
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 3 )
+uv1_scale = Vector3( 6, 4, 4 )
+uv1_offset = Vector3( 0, 0.002, 0 )

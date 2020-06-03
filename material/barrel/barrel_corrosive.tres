@@ -1,0 +1,28 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/barrel_corrosive.png-bd77cfe3d9a2ed760313661b900956ef.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/barrel_corrosive_specular.png-4d35457d7a6b637c8172ad3419ecfa6b.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/barrel_corrosive_normal.png-301d0850ef568213f32530c5d84937a3.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/barrel_corrosive_roughness.png-63a88716bde96047074896799faa29b6.s3tc.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+metallic = 0.8
+metallic_specular = 0.2
+metallic_texture = SubResource( 2 )
+roughness = 0.4
+roughness_texture = SubResource( 4 )
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = SubResource( 3 )

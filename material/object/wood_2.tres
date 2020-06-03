@@ -1,0 +1,29 @@
+[gd_resource type="SpatialMaterial" load_steps=5 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/wood_3.png-6a251e74ba345eb757b32f61476b0cd2.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/wood_3_specular.png-4ecd03abae3cbad1364359a1a5ea7dc2.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/wood_3_normal.png-af84bd005838ad6b766bf95e0aadfbe0.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=4]
+flags = 7
+load_path = "res://.import/default_roughness.png-9c85d8ec0c6858deca45ea4506cd5921.s3tc.stex"
+
+[resource]
+albedo_texture = SubResource( 1 )
+metallic = 1.0
+metallic_specular = 0.7
+metallic_texture = SubResource( 2 )
+roughness = 0.3
+roughness_texture = SubResource( 4 )
+normal_enabled = true
+normal_scale = 0.1
+normal_texture = SubResource( 3 )
+uv1_scale = Vector3( 2, 1, 1 )

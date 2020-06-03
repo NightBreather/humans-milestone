@@ -1,0 +1,17 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[ext_resource path="res://texture/concrete_cylinder/concrete_cylinder_diffuse.tga" type="Texture" id=1]
+[ext_resource path="res://texture/concrete_cylinder/concrete_cylinder_specular.tga" type="Texture" id=2]
+[ext_resource path="res://texture/concrete_cylinder/concrete_cylinder_normal.tga" type="Texture" id=3]
+
+[resource]
+resource_name = "Barriers.004"
+albedo_color = Color( 0.639216, 0.639216, 0.639216, 1 )
+albedo_texture = ExtResource( 1 )
+metallic = 0.3
+metallic_specular = 0.9
+metallic_texture = ExtResource( 2 )
+roughness = 0.8
+normal_enabled = true
+normal_scale = -2.0
+normal_texture = ExtResource( 3 )

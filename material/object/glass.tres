@@ -1,0 +1,15 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/default_roughness.png-9c85d8ec0c6858deca45ea4506cd5921.s3tc.stex"
+
+[resource]
+flags_transparent = true
+albedo_color = Color( 1, 1, 1, 0.27451 )
+metallic = 0.8
+metallic_specular = 1.0
+roughness = 0.4
+roughness_texture = SubResource( 1 )
+normal_enabled = true
+normal_scale = 16.0

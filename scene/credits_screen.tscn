@@ -1,0 +1,171 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://gui/font/xolonium_40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://gui/font/xolonium_default.tres" type="DynamicFont" id=2]
+[ext_resource path="res://gui/font/xolonium_20.tres" type="DynamicFont" id=3]
+[ext_resource path="res://source/screen/CreditsScreen.cs" type="Script" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "roll"
+length = 24.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Panel/Credits:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 20 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 600 ), Vector2( 0, -1500 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Panel/Credits:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 22, 24 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("Source/CreditsScreen")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 24.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "GoToTitleScreen"
+} ]
+}
+
+[node name="CreditsScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Credits" type="Control" parent="Panel"]
+modulate = Color( 1, 1, 1, 0.849999 )
+margin_top = 600.0
+margin_right = 1024.0
+margin_bottom = 2500.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameTitleLabel" type="Label" parent="Panel/Credits"]
+margin_right = 1024.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+text = "Humans: Milestone"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Producer" type="Control" parent="Panel/Credits"]
+margin_top = 600.0
+margin_right = 1024.0
+margin_bottom = 690.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProducerTitleLabel" type="Label" parent="Panel/Credits/Producer"]
+margin_right = 1024.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Producer"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProducerLabel" type="Label" parent="Panel/Credits/Producer"]
+margin_top = 60.0
+margin_right = 1024.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 3 )
+text = "Ednilson Pereira Oliveira"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Programmer" type="Control" parent="Panel/Credits"]
+margin_top = 900.0
+margin_right = 1024.0
+margin_bottom = 990.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgrammerTitleLabel" type="Label" parent="Panel/Credits/Programmer"]
+margin_right = 1024.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 2 )
+text = "Programmer"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgrammerLabel" type="Label" parent="Panel/Credits/Programmer"]
+margin_top = 60.0
+margin_right = 1024.0
+margin_bottom = 74.0
+custom_fonts/font = ExtResource( 3 )
+text = "Ednilson Pereira Oliveira"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThankYouLabel" type="Label" parent="Panel/Credits"]
+margin_top = 1200.0
+margin_right = 1024.0
+margin_bottom = 1249.0
+custom_fonts/font = ExtResource( 2 )
+text = "Thank You For Playing"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TheEndLabel" type="Label" parent="Panel/Credits"]
+margin_top = 1800.0
+margin_right = 1024.0
+margin_bottom = 1839.0
+custom_fonts/font = ExtResource( 2 )
+text = "The End"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/roll = SubResource( 2 )
+
+[node name="Source" type="Node" parent="."]
+
+[node name="CreditsScreen" type="Node" parent="Source"]
+script = ExtResource( 4 )
+animationPlayerNP = NodePath("../../AnimationPlayer")

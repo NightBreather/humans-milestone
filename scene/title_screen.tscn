@@ -1,0 +1,161 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://gui/theme/computer_system_theme.tres" type="Theme" id=1]
+[ext_resource path="res://source/screen/TitleScreen.cs" type="Script" id=4]
+[ext_resource path="res://prefab/computer/main_computer.tscn" type="PackedScene" id=6]
+[ext_resource path="res://gui/font/xolonium_60.tres" type="DynamicFont" id=7]
+[ext_resource path="res://gui/font/xolonium_40.tres" type="DynamicFont" id=8]
+[ext_resource path="res://gui/font/xolonium_default.tres" type="DynamicFont" id=9]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+theme = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="PanelContainer" parent="Panel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1014.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleLabel" type="Label" parent="Panel/Title"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 998.0
+margin_bottom = 85.0
+custom_fonts/font = ExtResource( 7 )
+text = "Humans: Milestone"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Action" type="PanelContainer" parent="Panel"]
+margin_left = 10.0
+margin_top = 110.0
+margin_right = 507.0
+margin_bottom = 588.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="Panel/Action"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 491.0
+margin_bottom = 474.0
+
+[node name="DebugLabel" type="Label" parent="Panel/Action/Container"]
+visible = false
+margin_top = 10.0
+margin_right = 485.0
+margin_bottom = 57.0
+text = "Debug Mode"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VersionLabel" type="Label" parent="Panel/Action/Container"]
+margin_top = 414.0
+margin_right = 485.0
+margin_bottom = 461.0
+text = "Version 1.0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Control" parent="Panel/Action/Container"]
+margin_top = 160.0
+margin_right = 485.0
+margin_bottom = 280.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="Panel/Action/Container/Button"]
+margin_left = 132.0
+margin_right = 342.0
+margin_bottom = 50.0
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitButton" type="Button" parent="Panel/Action/Container/Button"]
+margin_left = 132.0
+margin_top = 70.0
+margin_right = 342.0
+margin_bottom = 120.0
+text = "Quit Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Information" type="PanelContainer" parent="Panel"]
+margin_left = 517.0
+margin_top = 110.0
+margin_right = 1014.0
+margin_bottom = 588.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Container" type="Control" parent="Panel/Information"]
+margin_left = 6.0
+margin_top = 4.0
+margin_right = 491.0
+margin_bottom = 474.0
+
+[node name="TitleLabel" type="Label" parent="Panel/Information/Container"]
+margin_top = 10.0
+margin_right = 485.0
+margin_bottom = 67.0
+custom_fonts/font = ExtResource( 8 )
+text = "Information"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DataLabel" type="Label" parent="Panel/Information/Container"]
+margin_left = 8.0
+margin_top = 130.0
+margin_right = 478.0
+margin_bottom = 355.0
+custom_fonts/font = ExtResource( 9 )
+text = "Movement: W, A, S, D.
+Walk: Hold Shift.
+Interaction: Mouse Left or I.
+Maximize or Minimize: F4.
+Quit: ESC 2 times."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Source" type="Node" parent="."]
+
+[node name="TitleScreen" type="Node" parent="Source"]
+script = ExtResource( 4 )
+mainComputerPrefabPS = ExtResource( 6 )
+debugLabelNP = NodePath("../../Panel/Action/Container/DebugLabel")
+experimentFacilityPath = "res://scene/experiment_facility.tscn"
+experimentFacilityDebugPath = "res://scene/experiment_facility_debug.tscn"
+loadScreenPath = "res://scene/load_screen.tscn"
+[connection signal="pressed" from="Panel/Action/Container/Button/StartButton" to="Source/TitleScreen" method="OnStartGameButtonPressed"]
+[connection signal="pressed" from="Panel/Action/Container/Button/QuitButton" to="Source/TitleScreen" method="OnQuitGameButtonPressed"]

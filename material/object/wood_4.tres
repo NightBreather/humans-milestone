@@ -1,0 +1,24 @@
+[gd_resource type="SpatialMaterial" load_steps=4 format=2]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 7
+load_path = "res://.import/wood_crate_1.png-fd734d31802f073b5564e3cf587c50bb.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=2]
+flags = 7
+load_path = "res://.import/wood_crate_1_specular.png-c1b6f326d3af2d448ccb98fa95cdbf0c.s3tc.stex"
+
+[sub_resource type="StreamTexture" id=3]
+flags = 7
+load_path = "res://.import/wood_crate_1_normal.png-3b7ddc8e056ba82cc65e978c41096b1f.s3tc.stex"
+
+[resource]
+resource_name = "box"
+params_cull_mode = 2
+albedo_color = Color( 0.8, 0.8, 0.8, 1 )
+albedo_texture = SubResource( 1 )
+metallic_texture = SubResource( 2 )
+roughness = 0.7
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = SubResource( 3 )
