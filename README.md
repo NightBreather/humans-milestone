@@ -1,5 +1,6 @@
 # humans-milestone
-A Survival Horror game developed using the Godot Engine 3.2.1 and C#. You must solve puzzles while avoiding being caught by a weird creature.<br/>
+A Survival Horror game developed using the Godot Engine 3.2.1 and C#.
+<br/>
 
 Humans: Milestone is a Survival Horror open source game developed using the Godot Engine 3.2.1. The game is about humans being used as samples in an experiment made by a more advanced and unknown civilization. They want to find out how intelligent humans are, exposing humans to a very stressful experiment where the sample must solve puzzles while avoiding getting caught by a weird creature. Some data is collected and analyzed by this unknown civilization to come to a conclusion about how intelligent that sample is.
 <br/><br/>
